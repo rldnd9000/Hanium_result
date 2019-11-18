@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".roadSearch2">
+
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="1dp">
+    <FrameLayout
+        android:id="@+id/layout_main1"
+        android:layout_width="1dp"
+        android:layout_height="1dp">
+
+        <SurfaceView
+            android:id="@+id/camera_preview_main1"
+            android:layout_width="1dp"
+            android:layout_height="1dp" />
+
+        <TextView
+            android:id="@+id/TTS_Text"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:text="전방의 위험물이 있습니다." />
+
+    </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="1dp">
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:opencv="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+
+            android:orientation="vertical"
+            tools:context=".roadSearch2">
+
+            <org.opencv.android.JavaCameraView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                opencv:camera_id="any"
+                android:visibility="gone"
+                android:id="@+id/activity_surface_view" />
+
+        </LinearLayout>
+    </FrameLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/layout_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.9">
+
+            <fragment
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/map"
+                tools:context=".MapsActivity"
+                android:name="com.google.android.gms.maps.SupportMapFragment"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/drawable_border">
+
+                <TextView
+                    android:id="@+id/loc1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="현재 위치 로딩중..."
+                    android:textColor="#ffffff"
+                    android:textSize="15dp" />
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                 android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/drawable_border3">
+
+                    <TextView
+                        android:id="@+id/sagoSpped1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="현재 속도 로딩중..."
+                        android:textColor="#ffffff" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/drawable_border4">
+
+                        <TextView
+                            android:id="@+id/road1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:textColor="#ffffff"
+                            android:text="주행거리" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+    </FrameLayout>
+
+
+</LinearLayout>
